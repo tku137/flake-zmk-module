@@ -1,0 +1,26 @@
+/*
+ * Copyright (c) 2024 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ *
+ * Anywhy Flake Dongle Overlay
+ * 
+ * Configures a Seeeduino XIAO BLE as a central dongle for the Flake S keyboard.
+ * Uses the small_layout from the shared dtsi to ensure consistent position mapping.
+ */
+
+#include "anywhy_flake.dtsi"
+
+/ {
+    chosen {
+        zmk,kscan = &mock_kscan;
+        zmk,physical-layout = &small_layout;
+    };
+
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+};
