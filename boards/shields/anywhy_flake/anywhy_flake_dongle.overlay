@@ -24,3 +24,6 @@
         events = <0>;
     };
 };
+
+/* Delete the inherited kscan0 since dongle has no physical keys */
+/delete-node/ &kscan0;
