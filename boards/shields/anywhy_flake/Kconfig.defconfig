@@ -1,4 +1,4 @@
-# Dongle configuration
+# Dongle configuration (central role)
 if SHIELD_ANYWHY_FLAKE_DONGLE
 
 config ZMK_KEYBOARD_NAME
@@ -19,17 +19,17 @@ config BT_MAX_CONN
 config BT_MAX_PAIRED
     default 7
 
+# ZMK Studio runs on the dongle (central + USB connected)
+config ZMK_STUDIO
+    default y
+
 endif
 
-# Left half configuration (now peripheral only)
+# Left half configuration (peripheral only)
 if SHIELD_ANYWHY_FLAKE_LEFT
 
 config ZMK_KEYBOARD_NAME
     default "Anywhy Flake"
-
-# ZMK Studio can stay on the left for configuration purposes
-config ZMK_STUDIO
-    default y
 
 endif
 
